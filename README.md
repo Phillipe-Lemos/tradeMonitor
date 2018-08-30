@@ -52,7 +52,7 @@ JUnit/Mockito - For test purpose and because it comes with Spring boot.
 |--------------------------|----------------------------|----------------------|------------------
 | Schedule the polling of  |SonarTradingController.java |   inner cllass       |  createTask()
 | tradesover REST.	   |                            | TradeShedulerServer  |
-|--------------------------|----------------------------|----------------------|------------------
+|                          |                            |                      |
 | Request a book snapshot  | RestServiceImpl.java       | RestServiceImpl      | getOrderBook()
 | over REST.               |                            |                      |  
 |--------------------------|----------------------------|----------------------|------------------
