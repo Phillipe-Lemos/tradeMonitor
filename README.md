@@ -55,20 +55,20 @@ JUnit/Mockito - For test purpose and because it comes with Spring boot.
 |                          |                            |                      |
 | Request a book snapshot  | RestServiceImpl.java       | RestServiceImpl      | getOrderBook()
 | over REST.               |                            |                      |  
-|--------------------------|----------------------------|----------------------|------------------
+|                          |                            |                      |
 | Listen for diff-orders   | CustomInBoundHandler.java  | CustomInBoundHandler | channelRead0  
 | over websocket.          |                            |                      | 
-|--------------------------|----------------------------|----------------------|------------------
+|                          |                            |                      |
 | Replay diff-orders.      | WebSocketClientImpl.java   | WebSocketClientImpl  | open
-|--------------------------|----------------------------|----------------------|------------------
+|                          |                            |                      |
 | Use config option X to   | TradeServiceImpl.java      | TradeServiceImpl     | recentTrades  
 | request recent trades.   |                            |                      |
----------------------------|----------------------------|----------------------|------------------
+|                          |                            |                      |
 | Use config option X to   | OrderBookServiceImpl.java  | OrderBookService     | processOrderBook
 | limit number of ASKs     |                            |                      |
 | displayed in UI.         |                            |                      |
-|--------------------------|----------------------------|----------------------|------------------
+|                          |                            |                      |
 | The loop that causes the | TradeServiceImpl.java(loop)| TradeServiceImpl     | recentTrades
 | trading algorithm        | TickCalculator.java        | TickCalculator       | executeTradeStategy 
 | to reevaluate.           | (algorithm)                |                      |
-|--------------------------|----------------------------|----------------------|------------------
+|                          |                            |                      |
