@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane id="grMonitor" fx:id="grMonitor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monitor.trade.controller.SonarTradingController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <LineChart id="grAsks" fx:id="grAsks" alternativeColumnFillVisible="true" prefWidth="250.0" title="Best Asks" GridPane.columnSpan="2" GridPane.rowSpan="2">
+        <xAxis>
+          <NumberAxis id="xAxisAsks" side="BOTTOM" tickLabelsVisible="false" upperBound="50.0" fx:id="xAxisAsks" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis id="yAxisAsks" fx:id="yAxisAsks" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <LineChart id="grBids" fx:id="grBids" alternativeColumnFillVisible="true" title="Best Bids" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowSpan="2">
+        <xAxis>
+         <NumberAxis id="xAxisBids" side="BOTTOM" tickLabelsVisible="false" fx:id="xAxisBids" />
+        </xAxis>
+        <yAxis>
+         <NumberAxis id="yAxisBids" fx:id="yAxisBids" side="RIGHT" />
+        </yAxis>
+      </LineChart>
+      <HBox GridPane.columnSpan="5" GridPane.rowIndex="2">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" text="Nº bids &amp; asks :" textAlignment="JUSTIFY">
+               <HBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="txtNumAskBid" fx:id="txtNumAskBid" prefHeight="25.0" prefWidth="42.0" text="50">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Button id="btnAskBid" fx:id="btnAskBid" defaultButton="true" mnemonicParsing="false" onAction="#handleBtnBidsAsksAction" text="Set new value" />
+         </children>
+      </HBox>
+      <TableView id="tvSell" fx:id="tvSell" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnSpan="2" GridPane.rowIndex="5" GridPane.rowSpan="2">
+        <columns>
+          <TableColumn id="tcIdSell" fx:id="tcIdSell" maxWidth="2000.0" prefWidth="1500.0" text="Id" />
+          <TableColumn id="tcCreatedSell" fx:id="tcCreatedSell" maxWidth="6000.0" prefWidth="3000.0" text="Date" />
+            <TableColumn id="tcPriceSell" fx:id="tcPriceSell" prefWidth="75.0" text="Price" />
+            <TableColumn id="tcAmountSell" fx:id="tcAmountSell" prefWidth="75.0" text="Amount" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="8">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" text="Nº trades :">
+               <HBox.margin>
+                  <Insets left="10.0" right="2.0" />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets left="10.0" />
+               </opaqueInsets>
+            </Label>
+            <TextField id="txtNumTrades" fx:id="txtNumTrades" prefHeight="22.0" prefWidth="42.0" text="20">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" text="Up Ticks :">
+               <HBox.margin>
+                  <Insets left="5.0" right="2.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="txtUpperTickt" fx:id="txtUpperTickt" prefHeight="22.0" prefWidth="42.0" text="3">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label prefHeight="27.0" text="Down Ticks :">
+               <HBox.margin>
+                  <Insets left="5.0" right="2.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="txtDownTick" fx:id="txtDownTick" prefHeight="22.0" prefWidth="42.0" text="3">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Button id="btnConfirm" fx:id="btnConfirm" defaultButton="true" mnemonicParsing="false" onAction="#handleBtnConfirmAction" text="Confirm">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis></Button>
+         </children>
+      </HBox>
+      <TableView id="tvBuy" fx:id="tvBuy" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" GridPane.rowSpan="2">
+        <columns>
+          <TableColumn id="tcIdBuy" fx:id="tcIdBuy" maxWidth="2000.0" prefWidth="1000.0" text="Id" />
+          <TableColumn id="tcCreatedBuy" fx:id="tcCreatedBuy" maxWidth="6000.0" prefWidth="3000.0" text="Date" />
+            <TableColumn id="tcPriceBuy" fx:id="tcPriceBuy" prefWidth="75.0" text="Price" />
+            <TableColumn id="tcAmountBuy" fx:id="tcAmountBuy" prefWidth="75.0" text="Amount" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: db4848;" GridPane.columnSpan="2" GridPane.rowIndex="4">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Sell" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: bbf9c6;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4">
+         <children>
+            <Label text="Buy">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" style="-fx-background-color: #6eaad8;" GridPane.columnSpan="4" GridPane.rowIndex="3">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Trades" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</GridPane>
